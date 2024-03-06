@@ -1,0 +1,43 @@
+<html>
+     <head>
+        <style>
+            img{
+                height: 500px;
+            }
+        </style>
+     </head>
+    <body>
+        <center>
+        <img src="../boot/img/20231027.jpg" alt=""><br><br>
+        <button>ON</button>
+        <button onclick="d()">Start</button>
+        <button onclick="d1()">Stop</button>
+        </center>
+        <script>
+            function demo(){
+                var x = document.querySelector("button")
+                if(x.innerText=="ON"){
+                document.querySelector("img").setAttribute("src","../boot/img/learning.jpg")
+                x.innerText="OFF"
+                }
+                else{
+                    document.querySelector("img").setAttribute("src","../boot/img/20231027.jpg")
+                    x.innerText="ON"
+                }
+            }
+            var i=0
+            function d(){
+                if (i==0){
+                    a=window.setInterval(demo,1000)
+                }
+                i++
+            }
+            function d1(){
+                if (i>0){
+                    window.clearInterval(a)
+                }
+                i=0
+            }
+        </script>
+    </body>
+</html>
